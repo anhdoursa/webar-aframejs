@@ -89,14 +89,14 @@
       <a-entity environment="preset: forest; lighting: none; shadow: none; lightPosition: 0 2.15 0"
                 hide-in-ar-mode></a-entity>
       
-      <a-entity id="dino" position="-1 0 -3" scale="0.5 0.5 0.5">
-        <a-entity position="0 2.15 0" rotation="0 55 0"
+      <a-entity id="girl" position="0 0 -3" >
+        <a-entity position="0 0 0" rotation="0 0 0" scale="0.02 0.02 0.02"
                   gltf-model="#girl_animated"
                   animation-mixer
                   shadow="cast: true; receive: false"></a-entity>
       </a-entity>  
       
-      <a-entity light="type: ambient; intensity: 0.5;"></a-entity>
+      <a-entity light="type: ambient; intensity: 1;"></a-entity>
       <a-light type="directional"
                light="castShadow: true;
                       shadowMapHeight: 1024;
@@ -106,7 +106,7 @@
                       shadowCameraBottom: -5;
                       shadowCameraTop: 5;"
                id="light"
-               target="dino"
+               target="girl"
                position="-5 3 1.5"></a-light>
 
       <!-- This shadow-receiving plane is only visible in AR mode. -->
@@ -131,12 +131,12 @@
       </p>
       
       <p>
-        Powered by A-Frame </a>.
+        Powered by A-Frame v1.4.2</a>.
       </p>
     </div>
     <script>
       function setSize(scale) {
-        document.getElementById('dino').setAttribute('scale', {x: scale, y: scale, z: scale});
+        document.getElementById('girl').setAttribute('scale', {x: scale, y: scale, z: scale});
       }
       document.getElementById('btn_full').onclick = setSize.bind(this, 1);
       document.getElementById('btn_half').onclick = setSize.bind(this, 0.5);
